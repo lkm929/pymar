@@ -1,7 +1,7 @@
 git add .
 git commit -m "message"
 git branch -M main
-git remote add origin https://github.com/lkm929/ee.git
+git remote add origin https://github.com/lkm929/pymar.git
 git push -u origin main
 
 ```diff
