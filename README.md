@@ -1,3 +1,7 @@
+git add .
+git commit -m "message"
+git push -u origin main
+
 ```diff
 本代码修改至https://github.com/wjh720/QPLEX/tree/master/pymarl-master/src
 ```
