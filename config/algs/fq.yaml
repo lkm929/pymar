@@ -1,0 +1,30 @@
+feudal_worker: "feudal_worker"
+feudal_manager: "feudal_manager" 
+learner: "feudal_qlearner" 
+
+
+mixer: "qmix"  
+
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_anneal_time: 100000
+epsilon_finish: 0.05
+runner: "episode"  
+buffer_size: 5000
+
+# FeUdal-specific parameters
+goal_dim: 32  
+gamma: 0.98
+lr: 0.005
+target_update_interval: 200
+learner_log_interval: 100
+grad_norm_clip: 10
+worker_hidden_dim: 256  
+manager_hidden_dim: 256  
+agent_output_type: "pi_logits"
+
+mixing_embed_dim: 32
+hypernet_layers: 2
+hypernet_embed: 64
+
+name: "fq"

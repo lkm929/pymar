@@ -1,0 +1,104 @@
+{
+  "artifacts": [],
+  "command": "my_main",
+  "experiment": {
+    "base_dir": "D:\\code\\pymarl",
+    "dependencies": [
+      "numpy==1.23.1",
+      "PyYAML==6.0.2",
+      "sacred==0.8.7",
+      "torch==1.13.1+cu117"
+    ],
+    "mainfile": "test_main.py",
+    "name": "pymarl",
+    "repositories": [],
+    "sources": [
+      [
+        "test_main.py",
+        "_sources\\test_main_cab17020cf768102a44162effc50d423.py"
+      ],
+      [
+        "test_run.py",
+        "_sources\\test_run_9873d82dca9007e48b078000653a2dd7.py"
+      ],
+      [
+        "utils\\logging.py",
+        "_sources\\logging_1c1c5c83be7ac7b7b69888b3bcb127e3.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"C:\\Users\\maxli\\anaconda3\\envs\\pymar\\lib\\site-packages\\sacred\\config\\captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"D:\\code\\pymarl\\test_main.py\", line 37, in my_main\n    run(_run, config, _log)\n",
+    "  File \"D:\\code\\pymarl\\test_run.py\", line 55, in run\n    run_sequential(args=args, logger=logger)\n",
+    "  File \"D:\\code\\pymarl\\test_run.py\", line 247, in run_sequential\n    learner.train(episode_sample, runner.t_env, episode)\n",
+    "  File \"D:\\code\\pymarl\\learners\\fq_learner.py\", line 96, in train\n    q_values, _ = self.mac.worker(obs, self.mac.hidden_states_worker, goal)  # Worker\u4f7f\u7528\u76ee\u6a19\u8a08\u7b97Q\u503c obs, hidden_states_worker, goals\n",
+    "  File \"C:\\Users\\maxli\\anaconda3\\envs\\pymar\\lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1194, in _call_impl\n    return forward_call(*input, **kwargs)\n",
+    "  File \"D:\\code\\pymarl\\modules\\agents\\fq_worker_agent.py\", line 30, in forward\n    pi_t = torch.softmax(self.fc2(logits), dim=-1)  # \u8a08\u7b97\u52d5\u4f5c\u6982\u7387\u5206\u4f48\n",
+    "  File \"C:\\Users\\maxli\\anaconda3\\envs\\pymar\\lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1194, in _call_impl\n    return forward_call(*input, **kwargs)\n",
+    "  File \"C:\\Users\\maxli\\anaconda3\\envs\\pymar\\lib\\site-packages\\torch\\nn\\modules\\linear.py\", line 114, in forward\n    return F.linear(input, self.weight, self.bias)\n",
+    "RuntimeError: mat1 and mat2 shapes cannot be multiplied (96x96 and 3x9)\n"
+  ],
+  "heartbeat": "2024-12-28T15:22:49.482682",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+    "gpus": {
+      "driver_version": "560.70",
+      "gpus": [
+        {
+          "model": "NVIDIA GeForce GTX 1650",
+          "persistence_mode": false,
+          "total_memory": 4096
+        }
+      ]
+    },
+    "hostname": "NOI-LAPTOP",
+    "os": [
+      "Windows",
+      "Windows-10-10.0.19045-SP0"
+    ],
+    "python_version": "3.10.14"
+  },
+  "meta": {
+    "command": "my_main",
+    "config_updates": {
+      "t_max": 50000
+    },
+    "named_configs": [],
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--id": null,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "t_max=50000"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2024-12-28T15:22:21.230582",
+  "status": "FAILED",
+  "stop_time": "2024-12-28T15:22:49.484677"
+}
